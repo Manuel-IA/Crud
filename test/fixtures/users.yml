@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IdentificationType_id: MyString
+  name: MyString
+  birthdate: 2020-04-11
+  Gender_id: MyString
+  Country_id: MyString
+  Department_id: MyString
+  City_id: MyString
+
+two:
+  IdentificationType_id: MyString
+  name: MyString
+  birthdate: 2020-04-11
+  Gender_id: MyString
+  Country_id: MyString
+  Department_id: MyString
+  City_id: MyString
