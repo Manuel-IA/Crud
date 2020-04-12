@@ -1,0 +1,6 @@
+    <p>
+        El nombre es <%= user.name %> 
+        y la fecha de nacimiento es <%= user.birthdate %> 
+        <%= link_to 'Edit', edit_user_path(user) %> 
+        <%= link_to 'Delete', user, method: :delete, data: { confirm: 'sure?' } %> 
+    </p>
