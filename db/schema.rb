@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_215923) do
+ActiveRecord::Schema.define(version: 2020_04_14_005527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,33 +36,55 @@ ActiveRecord::Schema.define(version: 2020_04_11_215923) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "cities", force: :cascade do |t|
+  create_table "cities", id: :string, force: :cascade do |t|
     t.string "name"
-    t.string "Department_id"
+    t.bigint "department_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_cities_on_department_id"
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.bigint "identificationType_id"
+    t.integer "identification"
+    t.string "name"
+    t.string "birthdate"
+    t.bigint "gender_id"
+    t.bigint "country_id"
+    t.bigint "department_id"
+    t.bigint "city_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_clients_on_city_id"
+    t.index ["country_id"], name: "index_clients_on_country_id"
+    t.index ["department_id"], name: "index_clients_on_department_id"
+    t.index ["gender_id"], name: "index_clients_on_gender_id"
+    t.index ["identificationType_id"], name: "index_clients_on_identificationType_id"
+  end
+
+  create_table "countries", id: :string, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "countries", force: :cascade do |t|
+  create_table "departments", id: :string, force: :cascade do |t|
     t.string "name"
+    t.bigint "country_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "departments", force: :cascade do |t|
-    t.string "name"
-    t.string "Country_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_departments_on_country_id"
   end
 
   create_table "genders", force: :cascade do |t|
+    t.string "code"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "identification_types", force: :cascade do |t|
+    t.string "code"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -78,18 +100,6 @@ ActiveRecord::Schema.define(version: 2020_04_11_215923) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_login_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_login_users_on_reset_password_token", unique: true
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "IdentificationType_id"
-    t.string "name"
-    t.date "birthdate"
-    t.string "Gender_id"
-    t.string "Country_id"
-    t.string "Department_id"
-    t.string "City_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

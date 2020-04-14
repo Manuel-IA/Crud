@@ -3,7 +3,7 @@
 one:
   IdentificationType_id: MyString
   name: MyString
-  birthdate: 2020-04-11
+  birthdate: MyString
   Gender_id: MyString
   Country_id: MyString
   Department_id: MyString
@@ -12,7 +12,7 @@ one:
 two:
   IdentificationType_id: MyString
   name: MyString
-  birthdate: 2020-04-11
+  birthdate: MyString
   Gender_id: MyString
   Country_id: MyString
   Department_id: MyString

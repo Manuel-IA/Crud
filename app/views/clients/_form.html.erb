@@ -1,0 +1,29 @@
+<%= form_for @client do |f| %>
+    <%= f.label :identification %>
+    <%= f.text_field :identification %>
+    <br />
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br />
+    <%= f.label :birthdate %>
+    <%= date_field :client, :birthdate %>
+    <br />
+    <%= f.label :gender_id %>
+    <%= f.collection_select :gender_id, Gender.all, :id.to_s, :name %>
+    <br />
+    <%= f.label :identificationType_id %>
+    <%= f.collection_select :identificationType_id, IdentificationType.all, :id.to_s, :name %>
+    <br />
+    <%= f.label :country_id %>
+    <%= f.collection_select :country_id, Country.all, :id.to_s, :name %>
+    <br />
+    <%= f.label :department_id %>
+    <%= f.collection_select :department_id, Department.all, :id.to_s, :name %>
+    <br />
+    <%= f.label :city_id %>
+    <%= f.collection_select :city_id, City.all, :id.to_s, :name %>
+    <br />
+    <%= f.file_field :avatar %>
+    <br />
+    <%= f.submit %>
+<% end %> 

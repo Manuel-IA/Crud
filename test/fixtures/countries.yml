@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  {id: MyString
+  false}: MyString
+  code: MyString
   name: MyString
 
 two:
+  {id: MyString
+  false}: MyString
+  code: MyString
   name: MyString
