@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <ul>
+      <% if login_user_signed_in? %>
+        <%= link_to  "Sign out", destroy_login_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to  "Login", new_login_user_session_path %>
+      <% end %>
+    </ul>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

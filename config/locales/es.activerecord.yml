@@ -1,0 +1,15 @@
+es: 
+  activerecord:
+    models:
+      client: 'Cliente'
+      login_users: 'Usuarios'
+    attributes:
+      client:
+        name: 'Nombre'
+        identification: 'Identificación'
+        birthdate: 'Fecha de nacimiento'
+        gender_id: 'Genero'
+        country_id: 'País'
+        department_id: 'Departamento'
+        city_id: 'Ciudad'
+        identificationType_id: 'Tipo de documento'

@@ -1,9 +1,11 @@
-<%= form_for @client do |f| %>
+<%= form_for @client, builder: CustomFormBuilder do |f| %>
+    <%= f.alert_error %>
     <%= f.label :identification %>
     <%= f.text_field :identification %>
     <br />
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.field_error :name%>
     <br />
     <%= f.label :birthdate %>
     <%= date_field :client, :birthdate %>

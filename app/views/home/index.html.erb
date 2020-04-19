@@ -1,4 +1,6 @@
-<h1>INICIO DE LA APLICACION</h1>
+    <% if login_user_signed_in? %>
+        <%= label_tag ('Welcome') %> <%= current_login_user.email %>         
+    <% else %>
+        <h1> Proyecto Crud </h1>
+    <% end %>
 
-<p>Este es un parrafo de prueba</p>
-<p>Y este es un mensaje del controller:  <%= @messageController %> </p> 

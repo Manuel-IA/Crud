@@ -1,0 +1,12 @@
+en: 
+  clients:
+    client:
+      Edit: 'Edit' 
+      Delete: 'Delete'
+    new: 
+      form:
+        error: 'An error occurred when creating a new %{model}'
+    edit: 
+      form:
+        error: 'An error occurred when updating a %{model}'
+    

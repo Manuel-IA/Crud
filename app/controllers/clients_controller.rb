@@ -17,10 +17,9 @@ class ClientsController < ApplicationController
             @client.avatar.attach(io: File.open('./app/assets/images/index.jpeg'), filename: 'index.jpeg', content_type: 'image/jpeg')
         end 
         if @client.save
-          flash[:success] = "Object successfully created"
+          flash[:notice] = "Client successfully created"
           redirect_to @client
         else
-          flash[:error] = "Something went wrong"
           render 'new'
         end
     end
@@ -34,10 +33,9 @@ class ClientsController < ApplicationController
     def update
         @client.update client_params
         if @client.update_attributes( client_params )
-          flash[:success] = "Client was successfully updated"
+          flash[:notice] = "Client was successfully updated"
           redirect_to @client
         else
-          flash[:error] = "SometUsering went wrong"
           render 'edit'
         end
     end
@@ -45,10 +43,9 @@ class ClientsController < ApplicationController
     def destroy
         @client.destroy
         if @client.destroy
-            flash[:success] = 'CLient was successfully deleted.'
+            flash[:notice] = 'Client was successfully deleted.'
             redirect_to clients_path
         else
-            flash[:error] = 'Something went wrong'
             redirect_to clients_path
         end
     end
