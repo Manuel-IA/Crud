@@ -1,1 +1,0 @@
-$("#clients").html("<%= escape_javascript(render 'clients' ) %>");

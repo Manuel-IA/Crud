@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
 
     def index
         #List of all clients
-        @clients = Client.search(params[:search]).order( "#{params[:sort]} #{params[:direction]}" ).page params[:page]
+        @clients = Client.search(params[:search]).page params[:page]
     end
 
     def new
