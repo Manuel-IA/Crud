@@ -1,3 +1,3 @@
 class IdentificationType < ApplicationRecord
-    has_many :client
+    has_many :clients
 end

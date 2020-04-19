@@ -1,3 +1,3 @@
 class Gender < ApplicationRecord
-    has_many :client
+    has_many :clients
 end

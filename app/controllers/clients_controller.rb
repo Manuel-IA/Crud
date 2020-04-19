@@ -1,10 +1,11 @@
 class ClientsController < ApplicationController
 
     before_action :set_client, only: [:edit, :update, :show, :destroy]
+    before_action :check_session
 
     def index
         #List of all clients
-        @clients = Client.all
+        @clients = Client.search(params[:search]).order( "#{params[:sort]} #{params[:direction]}" ).page params[:page]
     end
 
     def new
@@ -50,6 +51,9 @@ class ClientsController < ApplicationController
         end
     end
     
+    def error
+
+    end 
 
     private
     def client_params
@@ -60,4 +64,11 @@ class ClientsController < ApplicationController
     def set_client
         @client = Client.find params[:id]
     end
+
+    def check_session
+        unless login_user_signed_in?
+            render 'error'
+            #redirect_to controller: "Login_user", action: "sign_in"
+        end 
+    end 
 end

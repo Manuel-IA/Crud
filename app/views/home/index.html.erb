@@ -1,5 +1,5 @@
     <% if login_user_signed_in? %>
-        <%= label_tag ('Welcome') %> <%= current_login_user.email %>         
+        <%= label_tag ('Welcome') %> <%= current_login_user.name %>         
     <% else %>
         <h1> Proyecto Crud </h1>
     <% end %>

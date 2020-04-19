@@ -1,4 +1,7 @@
     <p>
+        <%= hidden_field_tag :direction, params[:direction] %>
+        <%= hidden_field_tag :sort, params[:sort] %>
+        
         <%= image_tag client.avatar.variant(resize_to_limit: [200, 200], rotate: "-90") %>  
         El nombre es <%= client.name %> 
         y la fecha de nacimiento es <%= client.birthdate %> 
