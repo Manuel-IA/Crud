@@ -1,8 +1,13 @@
 <h1>Pagina principal Crud</h1>
 <p>Lista de clientes creados</p>
-<%= form_tag clients_path, method: 'get' do %>
+<%= form_tag clients_path, method: 'get', id: 'clients_search' do %>
+    <div id="pages">
+        <%= paginate @clients, remote: true %> 
+    </div>
+    <%= label_tag :search, "Buscar: " %>
     <%= text_field_tag :search %>
-    <%= submit_tag 'Search', name: nil %>
-    <%= render @clients%>
-    <%= paginate @clients %>
 <% end %>
+<div id="clients">
+    <%= render @clients, remote: true%>
+</div>
+<%= javascript_pack_tag 'pagination' %>

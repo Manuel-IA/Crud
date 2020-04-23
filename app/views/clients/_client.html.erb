@@ -1,7 +1,7 @@
-    <p> 
-        <%= image_tag client.avatar.variant(resize_to_limit: [200, 200], rotate: "-90") %>  
-        El nombre es <%= client.name %> 
-        y la fecha de nacimiento es <%= client.birthdate %> 
-        <%= link_to t('.Edit'), edit_client_path(client) %> 
-        <%= link_to t('.Delete'),  client, method: :delete, data: { confirm: 'sure?' } %> 
-    </p>
+<p>
+    <%= image_tag client.avatar.variant(resize_to_limit: [200, 200], rotate: "-90") %>  
+    El nombre es <%= client.name %> 
+    y la fecha de nacimiento es <%= client.birthdate %> 
+    <%= link_to t('.Edit'), edit_client_path(client) %> 
+    <%= link_to t('.Delete'),  client, method: :delete, data: { confirm: 'sure?' } %> 
+</p>
