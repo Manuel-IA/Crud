@@ -4,8 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'kaminari'
-	
-gem 'bootstrap', '~> 4.4'
 
 gem 'devise', git: 'https://github.com/heartcombo/devise.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

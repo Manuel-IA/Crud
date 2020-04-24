@@ -5,10 +5,14 @@
         <%= paginate @clients, remote: true %> 
     </div>
     <%= label_tag :search, "Buscar: " %>
-    <%= text_field_tag :search, nil, class: "input-form", placeholder: "Nombre" %>
+    <%= text_field_tag :search, nil, placeholder: "Nombre" %>
 
 <% end %>
 <div id="clients">
     <%= render @clients, remote: true%>
 </div>
+<button class="mdc-button">
+  <div class="mdc-button__ripple"></div>
+  <span class="mdc-button__label">Button</span>
+</button>
 <%= javascript_pack_tag 'pagination' %>
