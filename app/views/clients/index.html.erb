@@ -1,25 +1,14 @@
-<h1>Pagina principal Crud</h1>
-<p>Lista de clientes creados</p>
+<h1>Pagina principal </h1>
+<p>Lista de clientes nuevossds dksd k</p>
 <%= form_tag clients_path, method: 'get', id: 'clients_search' do %>
     <div id="pages">
         <%= paginate @clients, remote: true %> 
     </div>
     <%= label_tag :search, "Buscar: " %>
-    <label class="mdc-text-field mdc-text-field--no-label">
-        <div class="mdc-text-field__ripple"></div>
-            <%# <input class="mdc-text-field__input" type="text" placeholder="Busqueda" id="search" aria-label="Label" > %>
-            <%= text_field_tag :search, nil, class: "mdc-text-field__input", placeholder: "Nombre" %>
-        <div class="mdc-line-ripple"></div>
-    </label>
+    <%= text_field_tag :search, nil, class: "input-form", placeholder: "Nombre" %>
 
 <% end %>
 <div id="clients">
     <%= render @clients, remote: true%>
 </div>
-<body>
-  <button class="foo-button mdc-button">
-    <div class="mdc-button__ripple"></div>
-    <span class="mdc-button__label">Button</span>
-  </button>
-</body>
 <%= javascript_pack_tag 'pagination' %>
