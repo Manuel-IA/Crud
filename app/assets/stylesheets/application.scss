@@ -13,6 +13,7 @@
  *= require_self
  *= require_tree . 
  */
- @use '@material/button/mdc-button';
- @use '@material/button';
- 
+.link_custom a{
+    color:white;
+    text-decoration: none;
+}

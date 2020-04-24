@@ -7,17 +7,36 @@
     <link rel="stylesheet" href="bundle.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  </head>
   <body>
-    <% if login_user_signed_in? %>
-        <%= link_to  "Sign out", destroy_login_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to  "Login", new_login_user_session_path%>
-      <% end %>
+  <header class=" mdc-top-app-bar mdc-top-app-bar--fixed">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded">menu</button>
+        <span class="mdc-top-app-bar__title">Clients</span> 
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+        <button class="mdc-button mdc-button--raised">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label mdc-top-app-bar__title link_custom">
+            <% if login_user_signed_in? %>
+              <%= link_to  "Sign out", destroy_login_user_session_path, method: :delete%>
+            <% else %>
+              <%= link_to  "Login", new_login_user_session_path%>
+            <% end %>
+          </span>
+        </button>
+      </section>
+    </div>
+  </header>
+    <script src="bundle.js" async></script>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <script src="bundle.js" async></script>
     <%= yield %>
-  </body>
+</body>
 </html>
