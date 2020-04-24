@@ -13,4 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @use '@material/textfield/mdc-text-field';
+@import "@material/textfield";
+@import "@material/textfield/mdc-text-field.import";
+@import '@material/button/mdc-button.import';
+@import '@material/button';

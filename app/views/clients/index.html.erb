@@ -5,14 +5,21 @@
         <%= paginate @clients, remote: true %> 
     </div>
     <%= label_tag :search, "Buscar: " %>
-    <%= text_field_tag :search %>
+    <label class="mdc-text-field mdc-text-field--no-label">
+        <div class="mdc-text-field__ripple"></div>
+            <%# <input class="mdc-text-field__input" type="text" placeholder="Busqueda" id="search" aria-label="Label" > %>
+            <%= text_field_tag :search, nil, class: "mdc-text-field__input", placeholder: "Nombre" %>
+        <div class="mdc-line-ripple"></div>
+    </label>
+
 <% end %>
 <div id="clients">
     <%= render @clients, remote: true%>
 </div>
-<label class="mdc-text-field">
-  <input type="text" class="mdc-text-field__input" aria-labelledby="my-label">
-  <span class="mdc-floating-label" id="my-label">Label</span>
-  <div class="mdc-line-ripple"></div>
-</label>
+<body>
+  <button class="foo-button mdc-button">
+    <div class="mdc-button__ripple"></div>
+    <span class="mdc-button__label">Button</span>
+  </button>
+</body>
 <%= javascript_pack_tag 'pagination' %>
