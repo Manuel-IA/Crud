@@ -14,3 +14,5 @@ require("jquery")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import {MDCTextField} from '@material/textfield/index';
+const textField = new MDCTextField(document.querySelector('.mdc-text-field'));

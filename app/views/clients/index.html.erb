@@ -10,4 +10,9 @@
 <div id="clients">
     <%= render @clients, remote: true%>
 </div>
+<label class="mdc-text-field">
+  <input type="text" class="mdc-text-field__input" aria-labelledby="my-label">
+  <span class="mdc-floating-label" id="my-label">Label</span>
+  <div class="mdc-line-ripple"></div>
+</label>
 <%= javascript_pack_tag 'pagination' %>

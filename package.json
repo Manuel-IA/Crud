@@ -2,12 +2,22 @@
   "name": "Crud",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@material/button": "^6.0.0",
+    "@material/textfield": "^6.0.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "babel-loader": "^8.1.0",
     "jquery": "^3.5.0",
-    "turbolinks": "^5.2.0"
+    "material": "^0.4.3",
+    "material-components-web": "^6.0.0",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.43.0"
   },
   "version": "0.1.0",
   "devDependencies": {
