@@ -32,13 +32,13 @@ Country.create(id: '199', name: 'CHILE')
 Country.create(id: '245', name: 'ESPAÑA')
 
 
-Department.create(id: '05', name: 'ANTIOQUIA', country_id: '169')
+Department.create(id: '5', name: 'ANTIOQUIA', country_id: '169')
 Department.create(id: '15', name: 'BOYACA', country_id: '169')
 Department.create(id: '52', name: 'NARIÑO', country_id: '169')
 Department.create(id: '73', name: 'TOLIMA', country_id: '169')
 
-City.create(id: '001', name: 'IBAGUÉ', department_id: '73')
-City.create(id: '026', name: 'ALVARADO', department_id: '73')
+City.create(id: '1', name: 'IBAGUÉ', department_id: '73')
+City.create(id: '26', name: 'ALVARADO', department_id: '73')
 City.create(id: '443', name: 'MARIQUITA', department_id: '73')
 City.create(id: '861', name: 'VENADILLO', department_id: '73')
 

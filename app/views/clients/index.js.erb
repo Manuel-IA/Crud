@@ -1,8 +1,7 @@
 $('#clients').html("<%= j render @clients %>");
-$('.pagination').replaceWith('<%= j paginate @clients, remote: true %>')
+$('.pagination').replaceWith('<%= j paginate @clients, window: 1, remote: true %>')
 if (!$('.pagination').length){
-   console.log($('#clients'))
-   $('#pages').html('<%= j paginate @clients, remote: true %>')
+   $('#pages').html('<%= j paginate @clients, window: 1, remote: true %>')
 }
 
 

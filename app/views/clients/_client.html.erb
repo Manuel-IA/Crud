@@ -1,7 +1,16 @@
-<p>
-    <%= image_tag client.avatar.variant(resize_to_limit: [200, 200], rotate: "-90") %>  
-    El nombre es <%= client.name %> 
-    y la fecha de nacimiento es <%= client.birthdate %> 
-    <%= link_to t('.Edit'), edit_client_path(client) %> 
-    <%= link_to t('.Delete'),  client, method: :delete, data: { confirm: 'sure?' } %> 
-</p>
+<tr class="mdc-data-table__row">
+    <td class="mdc-data-table__cell">
+        <%= image_tag client.avatar, class: 'avatar' %>  
+    </td>
+    <td class="mdc-data-table__cell">
+        <%= client.name %> 
+    </td>
+    <td class="mdc-data-table__cell">
+        <%= link_to 'loupe', client_path(client), class: 'mdc-icon-button material-icons' %> 
+        <%= link_to 'edit', edit_client_path(client), class: 'mdc-icon-button material-icons' %> 
+        <%= link_to 'delete',  client, method: :delete, data: { confirm: 'sure?' }, class: 'mdc-icon-button material-icons' %> 
+    </td>
+</tr>
+
+    
+    

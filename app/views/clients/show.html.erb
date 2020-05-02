@@ -1,2 +1,43 @@
-<%= @client.name %>
-<%= @client.birthdate %>
+<div class="body-form">
+    <div class="mdc-card mdc-card--outlined my-card">
+        <div class="mdc-card__primary-action my-card-content">
+            <div class="mdc-card__media mdc-card__media--square">
+            <div class="mdc-card__media-content">
+                <%= @client.name %>
+                <br />
+                <%= image_tag @client.avatar, class: 'avatar2' %>  
+                <br />
+                <label>Identification: </label>
+                <%= @client.identification %>
+                <br />
+                <label>Birthdate: </label>
+                <%= @client.birthdate %>
+                <br />
+                <label>Identification type: </label>
+                <%=  IdentificationType.find(@client.identificationType_id).name %>
+                <br />
+                <label>Gender: </label>
+                <%= Gender.find(@client.gender_id).name %>
+                <br />
+                <label>Country: </label>
+                <%= Country.find(@client.country_id).name %>
+                <br />
+                <label>Department: </label>
+                <%= Department.find(@client.department_id).name %>
+                <br />
+                <label>City: </label>
+                <%= City.find(@client.city_id).name %>
+            </div>
+            </div>
+        </div>
+        <div class="mdc-card__actions">
+            <div class="mdc-card__action-buttons">
+                <%= link_to 'edit', edit_client_path(@client), class: 'mdc-icon-button material-icons' %> 
+                <%= link_to 'delete',  @client, method: :delete, data: { confirm: 'sure?' }, class: 'mdc-icon-button material-icons' %> 
+            </div>
+            <div class="mdc-card__action-icons">
+            <a href="/clients" class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Go home">home</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: MyString
   name: MyString
-  Country_id: MyString
+  country_id: MyString
 
 two:
+  id: MyString2
   name: MyString
-  Country_id: MyString
+  country_id: MyString

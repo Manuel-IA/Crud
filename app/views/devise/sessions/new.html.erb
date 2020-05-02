@@ -2,25 +2,50 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <label class="mdc-text-field mdc-text-field--with-leading-icon">
+        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">email</i>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'mdc-text-field__input' %>
+        <span class="mdc-floating-label" id="my-label-id">Email</span>
+        <div class="mdc-line-ripple"></div>
+    </label>
   </div>
-
+  <br />
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+   <label class="mdc-text-field mdc-text-field--with-leading-icon">
+        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">vpn_key</i>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'mdc-text-field__input' %>
+        <span class="mdc-floating-label" id="my-label-id">Password</span>
+        <div class="mdc-line-ripple"></div>
+    </label>
   </div>
-
+  
   <% if devise_mapping.rememberable? %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <div class="mdc-form-field">
+        <div class="mdc-checkbox" id="remember_me" name="remember_me">
+          <input type="checkbox"
+                class="mdc-checkbox__native-control"
+                id="checkbox-1"/>
+          <div class="mdc-checkbox__background">
+            <svg class="mdc-checkbox__checkmark"
+                viewBox="0 0 24 24">
+              <path class="mdc-checkbox__checkmark-path"
+                    fill="none"
+                    d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+            </svg>
+            <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+        <div class="mdc-checkbox__ripple"></div>
+      </div>
+    <label for="checkbox-1">Remember me</label>
+  </div>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: 'mdc-button mdc-button--raised' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+<%= javascript_pack_tag 'form' %>

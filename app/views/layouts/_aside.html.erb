@@ -1,0 +1,20 @@
+<aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+      <h3 class="mdc-drawer__title">Navigation menu</h3>
+      <h6 class="mdc-drawer__subtitle">welcome 
+        <%= current_login_user.name%> 
+      </h6>
+    </div>
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item" href="/clients" aria-current="page" tabindex="0" id='item-home'>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+          <span class="mdc-list-item__text">Home</span>
+        </a>
+        <a class="mdc-list-item" href="/clients/new" id='item-new'>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">create</i>
+          <span class="mdc-list-item__text">New client</span>
+        </a>
+      </nav>
+    </div>
+  </aside>

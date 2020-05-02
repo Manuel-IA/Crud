@@ -2,6 +2,7 @@ class ClientsController < ApplicationController
 
     before_action :set_client, only: [:edit, :update, :show, :destroy]
     before_action :check_session
+    layout "application"
 
     def index
         #List of all clients
@@ -52,7 +53,7 @@ class ClientsController < ApplicationController
     end
     
     def error
-
+        redirect_to '/'
     end 
 
     private
@@ -66,6 +67,7 @@ class ClientsController < ApplicationController
     end
 
     def check_session
+
         unless login_user_signed_in?
             render 'error'
             #redirect_to controller: "Login_user", action: "sign_in"

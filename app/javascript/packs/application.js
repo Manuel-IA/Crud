@@ -10,11 +10,6 @@ require("channels")
 require("jquery")
 require("sass")
 
-import {MDCRipple} from '@material/ripple';
-
-const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
-
-mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

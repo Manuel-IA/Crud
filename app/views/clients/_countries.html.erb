@@ -1,0 +1,9 @@
+ <ul class="mdc-list">
+      <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+      <% Country.all.each do |country| %>
+        <li class="mdc-list-item" data-value=<%= country.id %> >
+            <%= country.name %>
+        </li>
+      <% end %>
+
+</ul>

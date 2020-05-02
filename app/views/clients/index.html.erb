@@ -1,18 +1,46 @@
-<h1>Pagina principal </h1>
-<p>Lista de clientes nuevossds dksd k</p>
+<h1>Crud clients by Manuel {name} </h1>
 <%= form_tag clients_path, method: 'get', id: 'clients_search' do %>
-    <div id="pages">
-        <%= paginate @clients, remote: true %> 
-    </div>
-    <%= label_tag :search, "Buscar: " %>
-    <%= text_field_tag :search, nil, placeholder: "Nombre" %>
-
+    <label class="mdc-text-field mdc-text-field--with-leading-icon">
+        <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">search</i>
+        <%= text_field_tag :search, nil, class: 'mdc-text-field__input'  %>
+        <span class="mdc-floating-label" id="my-label-id">Search by name</span>
+        <div class="mdc-line-ripple"></div>
+    </label>
+    <div class="mdc-layout-grid" style="padding-left:7px">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell" style='padding-top:12px;'>
+                <div id="pages">
+                    <%= paginate @clients, window: 1, remote: true %> 
+                </div>
+            </div>
+            <div class="mdc-layout-grid__cell">
+                
+            </div>
+            <div class="mdc-layout-grid__cell align-end">   
+                <a class="mdc-fab" aria-label="Favorite" href='clients/new'>
+                    <div class="mdc-fab__ripple"></div>
+                    <span class="mdc-fab__icon material-icons">add</span>
+                </a>
+            </div>
+        </div>
+    </div>  
+    <div class="mdc-data-table div-table-clients">
+        <table class="mdc-data-table__table " aria-label="Clients list">
+            <thead>
+            <tr class="mdc-data-table__header-row">
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Avatar</th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Name</th>
+                <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="mdc-data-table__content" id="clients">
+                    <%= render @clients, remote: true%>
+            </tbody>
+        </table>
+    </div> 
 <% end %>
-<div id="clients">
-    <%= render @clients, remote: true%>
-</div>
-<button class="mdc-button">
-  <div class="mdc-button__ripple"></div>
-  <span class="mdc-button__label">Button</span>
-</button>
+<script>
+  export let name;
+</script>
+
 <%= javascript_pack_tag 'pagination' %>
