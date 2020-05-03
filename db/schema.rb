@@ -44,18 +44,24 @@ ActiveRecord::Schema.define(version: 2020_04_14_005527) do
     t.index ["department_id"], name: "index_cities_on_department_id"
   end
 
-  create_table :clients do |t|
-    t.belongs_to :identificationType
-    t.integer :identification
-    t.string :name
-    t.string :birthdate
-    t.belongs_to :gender
-    t.belongs_to :country
-    t.belongs_to :department
-    t.belongs_to :city
-
-    t.timestamps
+  create_table "clients", force: :cascade do |t|
+    t.bigint "identificationType_id"
+    t.integer "identification"
+    t.string "name"
+    t.string "birthdate"
+    t.bigint "gender_id"
+    t.bigint "country_id"
+    t.bigint "department_id"
+    t.bigint "city_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_clients_on_city_id"
+    t.index ["country_id"], name: "index_clients_on_country_id"
+    t.index ["department_id"], name: "index_clients_on_department_id"
+    t.index ["gender_id"], name: "index_clients_on_gender_id"
+    t.index ["identificationType_id"], name: "index_clients_on_identificationType_id"
   end
+
   create_table "countries", id: :string, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
