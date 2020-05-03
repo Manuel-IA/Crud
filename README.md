@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PASOS PARA CORRER LA APLICACION:
 
-Things you may want to cover:
+$rails db:drop db:create db:migrate db:seed
 
-* Ruby version
+# NOTAS DEL AUTOR
 
-* System dependencies
+* Para iniciar sesion debe registrarse(No hay usuario de pruebas por defecto)
 
-* Configuration
+* Se agrego Svelte solo la pagina Clients/show para las pruebas(En un futuro se agregara a todos las views)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* El testing del controller clients se encuntra en la carpeta specs/controllers/clients.rb
