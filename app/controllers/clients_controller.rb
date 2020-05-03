@@ -53,7 +53,7 @@ class ClientsController < ApplicationController
     end
     
     def error
-        redirect_to '/'
+       
     end 
 
     private
@@ -69,7 +69,7 @@ class ClientsController < ApplicationController
     def check_session
 
         unless login_user_signed_in?
-            render 'error'
+            redirect_to '/'
             #redirect_to controller: "Login_user", action: "sign_in"
         end 
     end 

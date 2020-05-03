@@ -6,15 +6,17 @@
 // All it does is render <div>Hello Svelte!</div> at the bottom of the page.
 
 import App from '../app.svelte'
+import WebpackerSvelte from "webpacker-svelte"
+import clientShow from "../clientShow.svelte"
+WebpackerSvelte.setup({ clientShow })
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new App({
-    target: document.body,
-    props: {
-      name: 'Svelte'
-    }
-  });
+    const app = new App({
+        target: document.body,
+        props: {
+            name: 'Svelte'
+        }
+    });
 
-  window.app = app;
+    window.app = app;
 })
-

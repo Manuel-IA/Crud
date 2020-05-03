@@ -1,4 +1,4 @@
-<h1>Crud clients by Manuel {name} </h1>
+<h1>Crud clients by Manuel</h1>
 <%= form_tag clients_path, method: 'get', id: 'clients_search' do %>
     <label class="mdc-text-field mdc-text-field--with-leading-icon">
         <i class="material-icons mdc-text-field__icon mdc-text-field__icon--leading" tabindex="0" role="button">search</i>
@@ -39,8 +39,5 @@
         </table>
     </div> 
 <% end %>
-<script>
-  export let name;
-</script>
 
 <%= javascript_pack_tag 'pagination' %>
