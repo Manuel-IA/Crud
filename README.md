@@ -4,6 +4,8 @@ PASOS PARA CORRER LA APLICACION:
 
 $rails db:drop db:create db:migrate db:seed
 
+Pagina principal = /login
+
 # NOTAS DEL AUTOR
 
 * Para iniciar sesion debe registrarse(No hay usuario de pruebas por defecto)
